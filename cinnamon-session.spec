@@ -4,7 +4,7 @@ Summary:	Session support tools for the Cinnamon desktop environment
 Summary(pl.UTF-8):	Programy obsługujęce sesję dla środowiska graficznego Cinnamon
 Name:		cinnamon-session
 Version:	5.8.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 #Source0Download: https://github.com/linuxmint/cinnamon-session/tags
@@ -83,6 +83,9 @@ for f in usr/share/locale/*/LC_MESSAGES/%{name}.mo ; do
 	install -D "$f" "$RPM_BUILD_ROOT/$f"
 done
 cd ..
+
+# not supported by glibc (as of 2.37)
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{ie,mo,sco,zgh}
 
 %find_lang %{name}
 
