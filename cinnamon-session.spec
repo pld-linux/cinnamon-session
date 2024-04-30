@@ -1,26 +1,27 @@
-%define	translations_version	5.8.1
+%define	translations_version	6.0.2
 
 Summary:	Session support tools for the Cinnamon desktop environment
 Summary(pl.UTF-8):	Programy obsługujęce sesję dla środowiska graficznego Cinnamon
 Name:		cinnamon-session
-Version:	5.8.1
-Release:	2
+Version:	6.0.4
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 #Source0Download: https://github.com/linuxmint/cinnamon-session/tags
 Source0:	https://github.com/linuxmint/cinnamon-session/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	710b9f81ef46bec92b941d36be42793d
+# Source0-md5:	75286fe77251ae0112e7733265e0e9cb
 #Source1Download: https://github.com/linuxmint/cinnamon-translations/tags
 Source1:	https://github.com/linuxmint/cinnamon-translations/archive/%{translations_version}/cinnamon-translations-%{translations_version}.tar.gz
-# Source1-md5:	b9ea707443c81e4340b0cb219d289130
+# Source1-md5:	36552df46587be4e32ac311b8d7084e4
 URL:		https://github.com/linuxmint/cinnamon-session
 BuildRequires:	OpenGL-devel
+BuildRequires:	cinnamon-desktop-devel >= 6.0.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.37.3
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	libcanberra-devel
 BuildRequires:	libxslt-progs
-BuildRequires:	meson >= 0.37.0
+BuildRequires:	meson >= 0.56.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 1:0.9.0
@@ -41,6 +42,7 @@ BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.37.3
+Requires:	cinnamon-desktop >= 6.0.0
 Requires:	cinnamon-settings-daemon >= 5.8.0
 Requires:	gtk+3 >= 3.0.0
 Requires:	xapps >= 1.0.4
