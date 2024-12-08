@@ -1,18 +1,18 @@
-%define	translations_version	6.2.2
+%define	translations_version	6.4.1
 
 Summary:	Session support tools for the Cinnamon desktop environment
 Summary(pl.UTF-8):	Programy obsługujęce sesję dla środowiska graficznego Cinnamon
 Name:		cinnamon-session
-Version:	6.2.1
+Version:	6.4.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 #Source0Download: https://github.com/linuxmint/cinnamon-session/tags
 Source0:	https://github.com/linuxmint/cinnamon-session/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	952ef43f6cedd8060011ae9ab30f7ef6
+# Source0-md5:	ca6cd78c4531262274986f0232353c26
 #Source1Download: https://github.com/linuxmint/cinnamon-translations/tags
 Source1:	https://github.com/linuxmint/cinnamon-translations/archive/%{translations_version}/cinnamon-translations-%{translations_version}.tar.gz
-# Source1-md5:	ca66b0eadc9416ef66384b3b278554ad
+# Source1-md5:	2d12def6818b100664081e979343d214
 URL:		https://github.com/linuxmint/cinnamon-session
 BuildRequires:	OpenGL-devel
 BuildRequires:	cinnamon-desktop-devel >= 6.0.0
