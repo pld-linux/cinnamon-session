@@ -69,16 +69,16 @@ graficznego GNOME.
 %setup -q -a1
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %{__make} -C cinnamon-translations-%{translations_version}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 cd cinnamon-translations-%{translations_version}
 for f in usr/share/locale/*/LC_MESSAGES/%{name}.mo ; do
