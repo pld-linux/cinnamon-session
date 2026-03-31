@@ -1,18 +1,18 @@
-%define	translations_version	6.4.1
+%define	translations_version	6.6.2
 
 Summary:	Session support tools for the Cinnamon desktop environment
 Summary(pl.UTF-8):	Programy obsługujęce sesję dla środowiska graficznego Cinnamon
 Name:		cinnamon-session
-Version:	6.4.0
+Version:	6.6.3
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 #Source0Download: https://github.com/linuxmint/cinnamon-session/tags
 Source0:	https://github.com/linuxmint/cinnamon-session/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	ca6cd78c4531262274986f0232353c26
+# Source0-md5:	880014455b6885d366071ad0e0ecc683
 #Source1Download: https://github.com/linuxmint/cinnamon-translations/tags
 Source1:	https://github.com/linuxmint/cinnamon-translations/archive/%{translations_version}/cinnamon-translations-%{translations_version}.tar.gz
-# Source1-md5:	2d12def6818b100664081e979343d214
+# Source1-md5:	56b012e29677ac11d2f208caed30c8d6
 URL:		https://github.com/linuxmint/cinnamon-session
 BuildRequires:	OpenGL-devel
 BuildRequires:	cinnamon-desktop-devel >= 6.0.0
@@ -82,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 cd cinnamon-translations-%{translations_version}
 for f in usr/share/locale/*/LC_MESSAGES/%{name}.mo ; do
-	install -D "$f" "$RPM_BUILD_ROOT/$f"
+	install -Dp "$f" "$RPM_BUILD_ROOT/$f"
 done
 cd ..
 
@@ -104,7 +104,7 @@ fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README README.md
+%doc AUTHORS README README.md debian/changelog
 %attr(755,root,root) %{_bindir}/cinnamon-session
 %attr(755,root,root) %{_bindir}/cinnamon-session-quit
 %attr(755,root,root) %{_libexecdir}/cinnamon-session-binary
